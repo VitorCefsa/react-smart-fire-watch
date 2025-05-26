@@ -1,0 +1,55 @@
+:root {
+  --bg-color: #181818;
+  --sidebar-width: 250px;
+  --sidebar-width-collapsed: 80px;
+  --header-height: 56px;
+  --footer-height: 40px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color);
+  color: #f8f8f8;
+}
+
+/* Corrige o espaço ocupado pelo header e pelo footer */
+.app-container {
+  display: flex;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  margin-top: var(--header-height);
+  margin-bottom: var(--footer-height);
+}
+
+/* O conteúdo principal cresce para ocupar o espaço ao lado da sidebar */
+.main-content {
+  flex-grow: 1;
+  padding: 32px 7vw 32px 7vw;
+  transition: margin-left 0.3s;
+}
+
+.sidebar-open {
+  margin-left: var(--sidebar-width);
+}
+.sidebar-closed {
+  margin-left: var(--sidebar-width-collapsed);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 16px 2vw 16px 2vw;
+    padding-top: 60px; /* já existia, pode manter */
+  }
+  .app-container {
+    margin-top: var(--header-height);
+    margin-bottom: var(--footer-height);
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  }
+}

@@ -1,0 +1,21 @@
+/* Reset de margem/padding padrão do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000; /* ou a cor desejada */
+  overflow-x: hidden;
+}
+
+
+body {
+  background-color: #1c1c1c; /* atual */
+  /* Trocar por: */
+  background-color: #3b0a02; /* vermelho queimado ou fundo quente */
+}
+

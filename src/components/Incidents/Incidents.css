@@ -1,0 +1,18 @@
+.incidents-container {
+    background-color: #1a1a1a;
+    padding: 20px;
+  }
+  
+  .MuiDataGrid-root {
+    background-color: #50352c !important;
+    color: white !important;
+    border: none !important;
+  }
+  
+  .MuiDataGrid-columnHeaders {
+    background-color: #5e4334 !important;
+  }
+  
+  .MuiDataGrid-cell {
+    border-bottom: 1px solid #5e4c3d !important;
+  }
