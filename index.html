@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Metadados básicos -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <meta name="theme-color" content="#7a1e0c" />
+  <meta name="description" content="Sistema inteligente de monitoramento e detecção de incêndios em tempo real" />
+  <meta name="keywords" content="incêndio, detecção, monitoramento, segurança, SmartFireWatch" />
+  
+  <!-- Favicon e Web App -->
+  <link rel="icon" type="image/svg+xml" href="/smartfire.svg" />
+  <link rel="apple-touch-icon" href="/smartfire-apple-touch.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  
+  <!-- Título -->
+  <title>SmartFireWatch - Monitoramento Inteligente de Incêndios</title>
+  
+  <!-- Pré-conexão para CDNs -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  
+  <!-- Bootstrap 5 CSS -->
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+    rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" 
+    crossorigin="anonymous"
+  >
+  
+  <!-- Ícones Bootstrap -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+  >
+  
+  <!-- Animações CSS -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  >
+  
+  <!-- CSS principal (pré-carregado) -->
+  <link rel="preload" href="/src/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="/src/index.css" /></noscript>
+  
+  <!-- InferenceJS -->
+  <script 
+    src="https://cdn.jsdelivr.net/npm/inferencejs" 
+    defer
+    integrity="sha384-example-integrity-hash" 
+    crossorigin="anonymous"
+  ></script>
+  
+  <!-- PWA (opcional) -->
+  <link rel="manifest" href="/manifest.json" />
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+  <!-- Container principal do React -->
+  <div id="root" class="flex-grow-1"></div>
+  
+  <!-- Bootstrap JS Bundle com Popper -->
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" 
+    crossorigin="anonymous"
+    defer
+  ></script>
+  
+  <!-- Script principal -->
+  <script type="module" src="/src/main.jsx" defer></script>
+  
+  <!-- Fallback para JavaScript desabilitado -->
+  <noscript>
+    <div class="alert alert-danger text-center m-3 animate__animated animate__shakeX">
+      <h2 class="fw-bold"><i class="bi bi-exclamation-triangle-fill"></i> JavaScript Necessário</h2>
+      <p class="mb-0">O SmartFireWatch requer JavaScript para funcionar corretamente. Por favor, habilite o JavaScript no seu navegador.</p>
+    </div>
+  </noscript>
+  
+  <!-- Fallback para navegadores muito antigos -->
+  <script>
+    // Verifica suporte a features essenciais
+    if (!window.Promise || !window.fetch || !window.customElements) {
+      document.write(
+        '<div class="alert alert-warning text-center m-3">' +
+        '<h4>Navegador não suportado</h4>' +
+        '<p>Por favor, atualize para uma versão moderna do Chrome, Firefox, Edge ou Safari.</p>' +
+        '</div>'
+      );
+    }
+  </script>
+</body>
+</html>
