@@ -1,0 +1,119 @@
+/* Base Styles */
+.dashboard-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.dashboard-title {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.chart-section {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.chart-section h3 {
+  color: #34495e;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.chart-container {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  padding: 15px;
+}
+
+.loading-spinner,
+.error-message {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.error-message {
+  color: #e74c3c;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .dashboard-container {
+    padding: 15px;
+  }
+  
+  .dashboard-title {
+    font-size: 1.8rem;
+  }
+  
+  .chart-section {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-title {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  
+  .chart-section h3 {
+    font-size: 1.2rem;
+  }
+  
+  .chart-container {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 10px;
+  }
+  
+  .dashboard-title {
+    font-size: 1.4rem;
+  }
+  
+  .chart-section {
+    padding: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .chart-section h3 {
+    font-size: 1.1rem;
+  }
+  
+  .chart-container {
+    padding: 8px;
+  }
+}
+
+/* Chart Enhancements */
+.recharts-tooltip {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid #ddd !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important;
+  padding: 8px 12px !important;
+}
+
+.recharts-legend-item-text {
+  color: #7f8c8d !important;
+  font-size: 0.9rem !important;
+}
+
+.recharts-cartesian-axis-tick-value {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+}

@@ -1,0 +1,140 @@
+/* Home.css */
+:root {
+  --sidebar-width: 250px;
+  --sidebar-collapsed-width: 80px;
+  --header-height: 70px;
+
+  /* 🔥 Tema Quente */
+  --primary-color: #7a1e0c;
+  --secondary-color: #9c2c16;
+  --accent-color: #ff9800;
+  --text-color: #fffaf0;
+  --transition-speed: 0.3s;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+}
+
+
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.main-content {
+  margin-left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
+  transition: margin-left var(--transition-speed) ease;
+}
+
+.main-content.sidebar-closed {
+  margin-left: var(--sidebar-collapsed-width);
+  width: calc(100% - var(--sidebar-collapsed-width));
+}
+
+.content-header {
+  height: var(--header-height);
+  padding: 0 20px;
+  background-color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.page-title {
+  color: var(--text-color);
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.content-area {
+  padding: 20px;
+  min-height: calc(100vh - var(--header-height));
+  background-color: #f9f9f9;
+}
+
+.content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  animation: fadeIn var(--transition-speed) ease-out;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color var(--transition-speed);
+}
+
+.mobile-menu-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu-toggle svg {
+  vertical-align: middle;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .content-area {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .content-header {
+    padding: 0 15px;
+  }
+
+  .page-title {
+    font-size: 1.2rem;
+  }
+}
+
+
+/* 🔧 Responsividade para telas menores */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .video-container,
+  .camera-feed {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .camera-feed video,
+  .camera-feed img {
+    width: 100% !important;
+    height: auto;
+  }
+}
