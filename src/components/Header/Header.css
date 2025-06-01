@@ -1,31 +1,42 @@
 .header {
   width: 100%;
-  height: 56px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #21252b;
-  color: #fff;
-  padding: 0 2vw;
-  box-shadow: 0 2px 8px #0004;
+  background: #ffffff; /* fundo branco */
+  color: #21252b;
+  padding: 0 4vw;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
+  border-bottom: 4px solid #ff4500; /* laranja fogo */
 }
 
 .logo {
-  font-weight: bold;
-  font-size: 1.3rem;
-  letter-spacing: 1px;
+  font-weight: 900;
+  font-size: 2.6rem;
+  text-transform: uppercase;
+  color: #d32f2f; /* vermelho-fogo */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: 2px;
 }
 
 .header nav a {
-  color: #fff;
-  margin: 0 1rem;
+  color: #333;
+  margin-left: 2.5rem;
+  font-size: 1.4rem;
   text-decoration: none;
-  transition: color .2s;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: color 0.3s, transform 0.2s;
 }
+
 .header nav a:hover {
-  color: #ffce56;
+  color: #ff5722; /* tom fogo */
+  transform: scale(1.1);
 }

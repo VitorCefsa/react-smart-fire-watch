@@ -18,12 +18,9 @@ const MainContent = ({ sidebarOpen }) => {
       }}
     >
       <Routes>
-        <Route path="/" element={<DashboardView />} />
-        <Route path="/dashboard" element={<DashboardView />} />
+        <Route path="/" element={<IncidentsView />} />
         <Route path="/cameras" element={<FireDetection />} />
         <Route path="/incidents" element={<IncidentsView />} />
-        <Route path="/multi-camera-detection" element={<MultiCameraDetectionView />} />
-
       </Routes>
     </div>
   )
