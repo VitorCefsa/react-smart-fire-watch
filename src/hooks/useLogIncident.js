@@ -1,10 +1,9 @@
-// src/hooks/useLogIncident.js
 import { useRef } from 'react';
 
 export function useLogIncident() {
   const ultimoLogEnviado = useRef(null);
 
-  const enviarLog = async (obj, origem = 'webcam', local = 'Desconhecido') => {
+  const enviarLog = async (obj, origem = 'webcam', imagemBase64 = null, local = 'Desconhecido') => {
     const agora = new Date();
     const logData = {
       data: agora.toISOString().slice(0, 10),
@@ -12,7 +11,8 @@ export function useLogIncident() {
       camera_id: origem,
       local,
       tipo_incidente: obj.class,
-      confianca: obj.confidence
+      confianca: obj.confidence,
+      imagem_base64: imagemBase64 // ⬅️ nova propriedade
     };
 
     const chave = `${logData.data}_${logData.hora}_${logData.tipo_incidente}`;
