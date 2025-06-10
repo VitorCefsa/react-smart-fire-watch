@@ -2,78 +2,45 @@
 
 Interface web do projeto **SmartFireWatch**, desenvolvida em React. Esta aplicação possui duas telas principais: uma para realizar inferência (captura e detecção de fogo) e outra para listar os incidentes detectados pelo sistema.
 
-## 🌐 Funcionalidades
+## 📸 Funcionalidades
 
-- Captura de imagem da câmera do navegador
-- Inferência em tempo real utilizando modelo de detecção
-- Envio automático de logs com imagem e metadados
-- Listagem de incidentes registrados
-- Visualização da imagem do momento da detecção
-- Comunicação em tempo real com Socket.IO
+- **Detecção de Incêndios em Tempo Real**  
+  Captura de imagem via camera e envio para análise de inferência por modelo treinado com YOLO.
 
-## 🧱 Tecnologias Utilizadas
+- **Listagem de Incidentes Detectados**  
+  Exibe histórico dos incidentes detectados, com horário, status e imagem associada.
 
-- **React**
-- **Vite**
-- **Axios** para consumo da API
-- **TailwindCSS** para estilização
-- **React Router** para navegação entre telas
-- **Socket.IO Client** para comunicação em tempo real
+- **Marcação de Incidentes como Resolvidos**  
+  Permite encerrar alertas sonoros e visuais após verificação.
 
-## ▶️ Como Executar
+- **Atualizações em Tempo Real com WebSocket**  
+  Recebimento instantâneo de novos eventos por meio do `Socket.IO`.
+
+## 🧩 Estrutura de Telas
+
+- `FireDetection.tsx`:  
+  Interface de captura de imagens com botão de inferência e indicação visual de alerta.
+
+- `IncidentsScreen.tsx`:  
+  Tela com listagem dos incidentes detectados, com botão para marcar como resolvido.
+
+## ⚙️ Tecnologias Utilizadas
+
+- [React](https://reactjs.org/) + [Vite](https://vitejs.dev/)
+- [TailwindCSS](https://tailwindcss.com/) para estilização
+- [Axios](https://axios-http.com/) para comunicação com a API
+- [Socket.IO Client](https://socket.io/docs/v4/client-api/) para comunicação em tempo real
+- [React Router DOM](https://reactrouter.com/) para navegação entre telas
+
+## 🛠️ Instalação e Execução
+
+### Pré-requisitos
+
+- Node.js (versão 18 ou superior)
+- API do projeto em execução (backend)
+
+### Passos
 
 1. Instale as dependências:
-
-```bash
-npm install
-```
-
-2. Crie um arquivo `.env` com:
-
-```env
-VITE_API_URL=http://localhost:3000
-VITE_SOCKET_URL=http://localhost:3000
-```
-
-3. Inicie a aplicação:
-
-```bash
-npm run dev
-```
-
-> Certifique-se de que a API e o servidor Socket.IO estão em execução.
-
-## 📁 Estrutura Esperada do Projeto
-
-```
-react-smart-fire-watch/
-├── public/
-│   └── index.html
-├── src/
-│   ├── components/
-│   │   └── FireCard.jsx
-│   ├── pages/
-│   │   ├── InferencePage.jsx
-│   │   └── IncidentsPage.jsx
-│   ├── services/
-│   │   └── api.js
-│   ├── sockets/
-│   │   └── socket.js
-│   ├── App.jsx
-│   └── main.jsx
-├── .env
-├── package.json
-└── README.md
-```
-
-## 🚧 Funcionalidades Futuras
-
-- Gráficos e dashboards analíticos
-- Autenticação de usuários
-- Notificações no navegador
-- Histórico de eventos por data/câmera
-
-
----
-
-Esta aplicação faz parte do sistema **SmartFireWatch**, focado na detecção de incêndios com inteligência artificial e resposta rápida.
+   ```bash
+   npm install
