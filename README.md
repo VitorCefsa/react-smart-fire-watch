@@ -1,12 +1,79 @@
-# React + Vite
+# SmartFireWatch Web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interface web do projeto **SmartFireWatch**, desenvolvida em React. Esta aplicação possui duas telas principais: uma para realizar inferência (captura e detecção de fogo) e outra para listar os incidentes detectados pelo sistema.
 
-Currently, two official plugins are available:
+## 🌐 Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Captura de imagem da câmera do navegador
+- Inferência em tempo real utilizando modelo de detecção
+- Envio automático de logs com imagem e metadados
+- Listagem de incidentes registrados
+- Visualização da imagem do momento da detecção
+- Comunicação em tempo real com Socket.IO
 
-## Expanding the ESLint configuration
+## 🧱 Tecnologias Utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React**
+- **Vite**
+- **Axios** para consumo da API
+- **TailwindCSS** para estilização
+- **React Router** para navegação entre telas
+- **Socket.IO Client** para comunicação em tempo real
+
+## ▶️ Como Executar
+
+1. Instale as dependências:
+
+```bash
+npm install
+```
+
+2. Crie um arquivo `.env` com:
+
+```env
+VITE_API_URL=http://localhost:3000
+VITE_SOCKET_URL=http://localhost:3000
+```
+
+3. Inicie a aplicação:
+
+```bash
+npm run dev
+```
+
+> Certifique-se de que a API e o servidor Socket.IO estão em execução.
+
+## 📁 Estrutura Esperada do Projeto
+
+```
+react-smart-fire-watch/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   └── FireCard.jsx
+│   ├── pages/
+│   │   ├── InferencePage.jsx
+│   │   └── IncidentsPage.jsx
+│   ├── services/
+│   │   └── api.js
+│   ├── sockets/
+│   │   └── socket.js
+│   ├── App.jsx
+│   └── main.jsx
+├── .env
+├── package.json
+└── README.md
+```
+
+## 🚧 Funcionalidades Futuras
+
+- Gráficos e dashboards analíticos
+- Autenticação de usuários
+- Notificações no navegador
+- Histórico de eventos por data/câmera
+
+
+---
+
+Esta aplicação faz parte do sistema **SmartFireWatch**, focado na detecção de incêndios com inteligência artificial e resposta rápida.
